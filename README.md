@@ -32,27 +32,6 @@ This model was trained from scratch with 5k images and scored a [Dice coefficien
 It can be easily used for multiclass segmentation, portrait segmentation, medical segmentation, ...
 
 
-## Usage
-**Note : Use Python 3.6 or newer**
-
-### Docker
-
-A docker image containing the code and the dependencies is available on [DockerHub](https://hub.docker.com/repository/docker/milesial/unet).
-You can download and jump in the container with ([docker >=19.03](https://docs.docker.com/get-docker/)):
-
-```console
-docker run -it --rm --shm-size=8g --ulimit memlock=-1 --gpus all milesial/unet
-```
-
-
-### Training
-
-
-By default, the `scale` is 0.5, so if you wish to obtain better results (but use more memory), set it to 1.
-
-Automatic mixed precision is also available with the `--amp` flag. [Mixed precision](https://arxiv.org/abs/1710.03740) allows the model to use less memory and to be faster on recent GPUs by using FP16 arithmetic. Enabling AMP is recommended.
-
-
 ### Prediction
 
 After training your model and saving it to `MODEL.pth`, you can easily test the output masks on your images via the CLI.
@@ -69,3 +48,4 @@ Available scales are 0.5 and 1.0.
 ## Data
 The Carvana data is available on the [Kaggle website](https://www.kaggle.com/c/carvana-image-masking-challenge/data).
 
+Original Source before Modification - https://github.com/milesial/Pytorch-UNet
